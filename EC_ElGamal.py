@@ -15,5 +15,3 @@ class EC_ElGamal:
         shared = self.ecc.scalar_mul(self.private_key,C1)
         dec_M = self.ecc.add(C2,self.ecc.negate(shared))
         return dec_M
-
-

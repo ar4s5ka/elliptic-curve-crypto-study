@@ -6,3 +6,4 @@ class GenKey:
     def gen_public_key (self):        
         public_key = self.ecc.scalar_mul(self.private_key,self.ecc.G)
         return public_key
+
