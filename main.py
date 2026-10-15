@@ -1,4 +1,4 @@
-from es import ECC
+from ecc_cal import ECC
 from ECDH import ECDH
 from EC_ElGamal import EC_ElGamal
 

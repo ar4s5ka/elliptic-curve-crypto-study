@@ -1,7 +1,7 @@
 
 import unittest
 
-from es import ECC
+from ecc_cal import ECC
 from EC_ElGamal import EC_ElGamal
 
 
