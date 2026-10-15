@@ -1,5 +1,5 @@
 from ecc_cal import ECC
-from ECDH import ECDH
+from gen_key import GenKey
 from EC_ElGamal import EC_ElGamal
 
 
@@ -8,15 +8,14 @@ def main():
     A = 1
     B = 50
     G = (0, 177)
-    private_key1 = 114
-    private_key2 = 514
+    private_key = 114
     M = (3, 33)
     k = 60  # 1~999
 
     ecc = ECC(P, A, B, G)
-    ecdh = ECDH(private_key1, private_key2, ecc)
-    public_key1, public_key2 = ecdh.gen_public_key()
-    ec_elgamal = EC_ElGamal(M, public_key1, private_key1, k, ecc)
+    key_generator = GenKey(private_key, ecc)
+    public_key = key_generator.gen_public_key()
+    ec_elgamal = EC_ElGamal(M, public_key, private_key, k, ecc)
 
     C1, C2 = ec_elgamal.encryption()
     restored = ec_elgamal.decryption(C1, C2)
